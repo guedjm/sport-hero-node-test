@@ -1,4 +1,10 @@
-
+/**
+ * Check if a gps track enter in a box
+ * @param gpsTrack The gps track
+ * @param pointNorthWest Top-left corner of the box
+ * @param pointSouthEast Bottom-right corner of the box
+ * @returns {boolean} Check result
+ */
 function trackEnterTheBox (gpsTrack, pointNorthWest, pointSouthEast) {
   var result = false;
 
@@ -10,6 +16,13 @@ function trackEnterTheBox (gpsTrack, pointNorthWest, pointSouthEast) {
   return result;
 }
 
+/**
+ * Check if a gps track is in a box
+ * @param gpsTrack The gps track
+ * @param pointNorthWest Top-left corner of the box
+ * @param pointSouthEast Bottom-right corner of the box
+ * @returns {boolean} Check result
+ */
 function trackInTheBox (gpsTrack, pointNorthWest, pointSouthEast) {
   var result = true;
 
@@ -21,6 +34,12 @@ function trackInTheBox (gpsTrack, pointNorthWest, pointSouthEast) {
   return !result;
 }
 
+/**
+ * Get the smallest distance between a gps track and a gps point
+ * @param gpsTrack The gps track
+ * @param gpsPoint The gps point
+ * @returns {int} The distance
+ */
 function getDistanceBetweenPointAndNearestGpsPoint (gpsTrack, gpsPoint) {
   var distance = null;
   var nearestPointDistance = null;
@@ -33,6 +52,12 @@ function getDistanceBetweenPointAndNearestGpsPoint (gpsTrack, gpsPoint) {
   return nearestPointDistance;
 }
 
+/**
+ * Get time at the nearest distance between two gps track
+ * @param gpsTrack A gps track
+ * @param anotherGpsTrack Another gps track
+ * @returns {int} Time
+ */
 function getTimeAtTheNearest (gpsTrack, anotherGpsTrack) {
   var distance = null;
   var nearestTime = null;
@@ -50,6 +75,14 @@ function getTimeAtTheNearest (gpsTrack, anotherGpsTrack) {
   return nearestTime;
 }
 
+/**
+ * Get the smallest distance between two gps track
+ * Time match can be specified with the ignoreTime parameter
+ * @param gpsTrack A gps track
+ * @param anotherGpsTrack Another gps track
+ * @param ignoreTime {boolean} Match time
+ * @returns {number} smallest distance
+ */
 function getDistanceAtTheNearest (gpsTrack, anotherGpsTrack, ignoreTime) {
   var distance = null;
   var nearestDistance = null;
@@ -67,6 +100,12 @@ function getDistanceAtTheNearest (gpsTrack, anotherGpsTrack, ignoreTime) {
   return nearestDistance;
 }
 
+/**
+ * Get distance between two points
+ * @param p1 Point one
+ * @param p2 Point two
+ * @returns {number} Distance
+ */
 function getDistance (p1, p2) {
   return Math.sqrt(Math.pow(p2.lat - p1.lat, 2) + Math.pow(p2.lon - p1.lon, 2));
 }
